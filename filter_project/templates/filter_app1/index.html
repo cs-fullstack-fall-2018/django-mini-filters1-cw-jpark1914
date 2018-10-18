@@ -15,7 +15,7 @@
     <b>{{todo.name}}</b>
 </div>
 <div class='due_date'>
-    <b>Due:</b> {{ todo.due_date | get_due_date_string }}
+    <b>Due:</b> <div style ='background-color:{{todo.due_date | get_due_date_color}};' 'border: 2px solid{{todo.due_date | get_due_date_color}}';> {{ todo.due_date | get_due_date_string }} </div>
 </div>
 </p>
 {% endfor %}

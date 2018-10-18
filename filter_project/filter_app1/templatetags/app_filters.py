@@ -19,4 +19,13 @@ def get_due_date_string(value):
     elif delta.days > 1:
         return "In %s days" % delta.days
 
+@register.filter(name='get_due_date_color')
+def get_due_date_color(value):
+    delta = value - date.today()
 
+    if delta.days == 0:
+        return '#FF7400'
+    elif delta.days < 0:
+        return  '#FF0000'
+    elif delta.days > 0:
+        return '#00CC00'
